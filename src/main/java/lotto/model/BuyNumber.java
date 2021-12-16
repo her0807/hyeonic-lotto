@@ -15,6 +15,10 @@ public class BuyNumber {
         return this.number * Constant.LOTTO_PRICE;
     }
 
+    public boolean isOver(int target) {
+        return number < target;
+    }
+
     private void validNumber(String number) {
         if (!isNumeric(number)) {
             throw new IllegalArgumentException(Message.BUY_NUMBER_STRING_ERROR);
