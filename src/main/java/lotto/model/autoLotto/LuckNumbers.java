@@ -2,37 +2,20 @@ package lotto.model.autoLotto;
 
 import java.util.List;
 
-import lotto.model.autoLotto.AutoLottoProduction;
-import lotto.model.autoLotto.Jackpot;
-import lotto.model.autoLotto.LottoNumber;
-import lotto.util.Constant;
+import lotto.model.user.Lotto;
 
 public class LuckNumbers {
-    private final List<LottoNumber> luckNumbers;
+    private final Lotto winnerLotto;
 
-    public LuckNumbers(AutoLottoProduction generateLotto) {
-        this.luckNumbers = generateLotto.createAutoLotto();
+    public LuckNumbers(List<LottoNumber> winningNumber) {
+        this.winnerLotto = new Lotto(winningNumber);
     }
 
-    public int askJackpot(List<LottoNumber> lotto) {
-        int count = Constant.LOTTO_MIN_RANGE;
-        for (LottoNumber number : lotto) {
-            if (isJackpot(number)) {
-                count++;
-            }
-        }
-        if (count > Constant.LOTTO_JACKPOT_MIN_VALUE)
-            return Jackpot.getMoney(count);
-        return Constant.LOTTO_MIN_RANGE;
+    public int getMatchCount(Lotto lottoTicket) {
+        return lottoTicket.calculateMatchCount(winnerLotto);
     }
-
-    private boolean isJackpot(LottoNumber lottoNumber) {
-        return luckNumbers.stream()
-            .anyMatch(luckNumbers -> lottoNumber.isSameNumber(luckNumbers.getNumber()));
-    }
-
     @Override
     public String toString() {
-        return String.join(",", luckNumbers.toString());
+        return String.join(",", winnerLotto.toString());
     }
 }

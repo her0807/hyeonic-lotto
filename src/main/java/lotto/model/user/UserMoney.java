@@ -11,6 +11,10 @@ public class UserMoney {
         this.money = toInt(money);
     }
 
+    public int getMoney() {
+        return money;
+    }
+
     private void validMoney(String money, BuyNumber buyNumber) {
         if (!isNumeric(money)) {
             throw new IllegalArgumentException(Message.USER_MONEY_STRING_ERROR);

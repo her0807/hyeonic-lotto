@@ -19,4 +19,15 @@ public class Output {
     public static void luckNumbers(LuckNumbers luckNumbers) {
         System.out.println(String.format(Message.GUIDE_LUCK_NUMBERS, luckNumbers));
     }
+
+    public static void result(String number, int money, int rank, int total, double rate) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Message.FINAL_GUIDE).append(Message.NEXT_LINE);
+        sb.append(String.format(Message.BUY_NUMBER, number)).append(Message.NEXT_LINE);
+        sb.append(String.format(Message.BUY_PRICE, money)).append(Message.NEXT_LINE);
+        sb.append(String.format(Message.FINAL_RANK, rank)).append(Message.NEXT_LINE);
+        sb.append(String.format(Message.FINAL_MONEY, total)).append(Message.NEXT_LINE);
+        sb.append(String.format(Message.FINAL_RATE, rate));
+        System.out.println(sb);
+    }
 }

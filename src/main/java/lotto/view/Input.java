@@ -23,7 +23,7 @@ public class Input {
 
     public static UserMoney userMoney(BuyNumber number) {
         try {
-            Output.message(String.format(Message.INPUT_GUIDE_USER_MONEY, number.toString()));
+            Output.message(String.format(Message.INPUT_GUIDE_USER_MONEY, number.toStringPrice()));
             return new UserMoney(Console.readLine(), number);
         } catch (IllegalArgumentException e) {
             Output.errorMessage(e.getMessage());

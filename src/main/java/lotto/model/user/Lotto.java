@@ -1,8 +1,8 @@
 package lotto.model.user;
 
+import java.util.Collections;
 import java.util.List;
 
-import lotto.model.autoLotto.LuckNumbers;
 import lotto.model.autoLotto.LottoNumber;
 
 public class Lotto {
@@ -12,7 +12,20 @@ public class Lotto {
         this.lotto = lotto;
     }
 
-    public int calculateJackpot(LuckNumbers luckNumbers) {
-        return luckNumbers.askJackpot(lotto);
+    public int calculateMatchCount(Lotto winningNumbers) {
+        long count = winningNumbers.lotto.stream()
+            .filter(lotto::contains)
+            .count();
+        System.out.println("여기 둘어오니"+count);
+        return Long.valueOf(count).intValue();
+    }
+
+    public List<LottoNumber> getLottoNumbers() {
+        return Collections.unmodifiableList(lotto);
+    }
+
+    @Override
+    public String toString() {
+        return String.join(",", lotto.toString());
     }
 }

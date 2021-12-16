@@ -1,27 +1,23 @@
 package lotto.model.user;
 
-import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import lotto.model.autoLotto.AutoLottoProduction;
+import lotto.model.autoLotto.Jackpot;
 import lotto.model.autoLotto.LuckNumbers;
-import lotto.util.Constant;
 
 public class UserLotto {
-    private List<Lotto> lotto = new LinkedList<>();
+    private final List<Lotto> lotto;
 
-    public UserLotto(BuyNumber buyNumber, AutoLottoProduction autoLottoProduction) {
-        int count = Constant.EMPTY;
-        while (buyNumber.isOver(count++)) {
-            lotto.add(new Lotto(autoLottoProduction.createAutoLotto()));
-        }
+    public UserLotto(List<Lotto> lotto) {
+        this.lotto = lotto;
     }
 
-    public int totalJackpotMoney(LuckNumbers luckNumbers) {
-        return lotto
-            .stream()
-            .map(lotto -> lotto.calculateJackpot(luckNumbers))
-            .mapToInt(i -> i)
-            .sum();
+    public List<Jackpot> createCount(LuckNumbers luckNumbers) {
+        return lotto.stream().
+            map(luckNumbers::getMatchCount)
+            .map(Jackpot::getRank)
+            .collect(Collectors.toList());
     }
+
 }
