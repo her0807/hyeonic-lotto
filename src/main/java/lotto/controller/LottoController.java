@@ -36,6 +36,5 @@ public class LottoController {
 
         Output.result(buyNumber.toString(), buyNumber.toPrice(), lottoResult.maxRank().getName(), lottoResult.total(),
             lottoResult.yield());
-
     }
 }

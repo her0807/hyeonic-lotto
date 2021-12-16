@@ -19,5 +19,4 @@ public class UserLotto {
             .map(Jackpot::getRank)
             .collect(Collectors.toList());
     }
-
 }

@@ -16,7 +16,6 @@ public class Lotto {
         long count = winningNumbers.lotto.stream()
             .filter(lotto::contains)
             .count();
-        System.out.println("여기 둘어오니"+count);
         return Long.valueOf(count).intValue();
     }
 
