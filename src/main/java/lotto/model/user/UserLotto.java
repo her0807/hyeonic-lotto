@@ -1,9 +1,10 @@
-package lotto.model;
+package lotto.model.user;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import lotto.model.autoLotto.AutoLottoProduction;
+import lotto.model.autoLotto.LuckNumbers;
 import lotto.util.Constant;
 
 public class UserLotto {

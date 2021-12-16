@@ -1,7 +1,8 @@
-package lotto.model;
+package lotto.model.user;
 
 import java.util.List;
 
+import lotto.model.autoLotto.LuckNumbers;
 import lotto.model.autoLotto.LottoNumber;
 
 public class Lotto {

@@ -1,6 +1,6 @@
 package lotto.view;
 
-import lotto.model.LuckNumbers;
+import lotto.model.autoLotto.LuckNumbers;
 import lotto.util.Constant;
 import lotto.util.Message;
 

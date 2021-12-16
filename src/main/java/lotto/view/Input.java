@@ -1,8 +1,8 @@
 package lotto.view;
 
 import camp.nextstep.edu.missionutils.Console;
-import lotto.model.BuyNumber;
-import lotto.model.UserMoney;
+import lotto.model.user.BuyNumber;
+import lotto.model.user.UserMoney;
 import lotto.util.Message;
 
 public class Input {
