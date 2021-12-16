@@ -14,4 +14,9 @@ public class LottoNumber {
     public boolean isSameNumber(int number) {
         return this.number == number;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(number);
+    }
 }

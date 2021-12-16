@@ -1,6 +1,7 @@
 package lotto.util;
 
 public class Message {
+    public static final String GUIDE_LUCK_NUMBERS = "금주의 당첨 번호는 %s 입니다.";
     public static final String INPUT_GUIDE_BUY_NUMBER = "구매할 로또의 개수를 입력해주세요.";
     public static final String INPUT_GUIDE_USER_MONEY = "구입 금액은 %s원 입니다. 구입 금액을 입력해주세요.";
     public static final String ERROR = "[ERROR]";

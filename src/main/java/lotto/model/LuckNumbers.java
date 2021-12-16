@@ -30,4 +30,9 @@ public class LuckNumbers {
         return luckNumbers.stream()
             .anyMatch(luckNumbers -> lottoNumber.isSameNumber(luckNumbers.getNumber()));
     }
+
+    @Override
+    public String toString() {
+        return String.join(",", luckNumbers.toString());
+    }
 }
