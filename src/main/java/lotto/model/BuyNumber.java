@@ -44,4 +44,9 @@ public class BuyNumber {
     private int toInt(String number) {
         return Integer.parseInt(number);
     }
+
+    @Override
+    public String toString() {
+        return String.format(Constant.BUY_NUMBER_FORMAT, toPrice());
+    }
 }

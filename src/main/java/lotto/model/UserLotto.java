@@ -15,4 +15,12 @@ public class UserLotto {
             lotto.add(new Lotto(autoLottoProduction.createAutoLotto()));
         }
     }
+
+    public int totalJackpotMoney(LuckNumbers luckNumbers) {
+        return lotto
+            .stream()
+            .map(lotto -> lotto.calculateJackpot(luckNumbers))
+            .mapToInt(i -> i)
+            .sum();
+    }
 }
