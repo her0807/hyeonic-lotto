@@ -11,6 +11,10 @@ public class BuyNumber {
         this.number = toInt(number);
     }
 
+    public int toPrice() {
+        return this.number * Constant.LOTTO_PRICE;
+    }
+
     private void validNumber(String number) {
         if (!isNumeric(number)) {
             throw new IllegalArgumentException(Message.BUY_NUMBER_STRING_ERROR);
