@@ -1,4 +1,4 @@
-package lotto.model;
+package lotto.model.autoLotto;
 
 public class LottoNumber {
     private final int number;

@@ -1,4 +1,4 @@
-package lotto.model;
+package lotto.model.autoLotto;
 
 import java.util.HashSet;
 import java.util.LinkedList;
